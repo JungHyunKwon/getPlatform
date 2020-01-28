@@ -3,14 +3,7 @@
  * @version 1.0.0
  */
 (function() {
-	var _platform = navigator.platform.toLowerCase();
-
-	//win16, win32, win64, macintel, mac일 때
-	if('win16|win32|win64|macintel|mac'.indexOf(_platform) > -1) {
-		_platform = 'pc';
-	}else{
-		_platform = 'mobile';
-	}
+	var platform = ('win16|win32|win64|macintel|mac'.indexOf(navigator.platform.toLowerCase()) > -1) ? 'pc' : 'mobile';
 	
 	/**
 	 * @name getPlatform
@@ -18,6 +11,6 @@
 	 * @return {string}
 	 */
 	window.getPlatform = function() {
-		return _platform;
+		return platform;
 	};
 })();
